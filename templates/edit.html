@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block content %} 
+        <section>
+            <div class="container">
+                <div class="edit-entry">
+                    <h2>Edit Entry For Title - {{ title }}</h2>                    
+                   <form method="POST" action="" class="form">
+                        {{ form.hidden_tag() }}
+                         <div class="field"><label for="title">Title</label><input id="title" type="text" name="title" value="{{ title }}" required></div><br>
+                        <div class="field"><label for="date">Date</label><input id="date" type="date" name="date"></div><br>
+                        <div class="field"><label for="time_spent">Time Spent</label><input id="time_spent" type="text" name="time_spent"></div><br>
+                        <div class="field"><label for="what_you_learned">What I Learned</label><textarea id="what_you_learned" rows="5" name="what_you_learned"></textarea></div><br>
+                       <div class="field"><label for="resources_to_remember">Resources to Remember</label><textarea id="resources_to_remember" rows="5" name="resources_to_remember"></textarea></div><br>
+                        <button type="submit" id="submit">Edit Entry</button>
+                        <a href="{{ url_for('index') }}" class="button button-secondary">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </section>
+{% endblock %}
